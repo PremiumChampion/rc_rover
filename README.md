@@ -47,8 +47,8 @@ __NO CHECKS OR VALIDATION VIA PIPE MIGHT THROW ERRORS ...__
 * build using `npm run build` -> copy build directory to `./server/static`
 * contains UI
 
-## Build dependencies
+## Build sequence
 
------project: rover---|
-                      |-------project: server
------project web------|
+1. project: rover
+2. project: web
+3. project: server (requires build results from rover and web)
