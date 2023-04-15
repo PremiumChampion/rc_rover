@@ -1,0 +1,48 @@
+{
+  "name": "mvc-api-template",
+  "version": "1.0.0",
+  "description": "A template for a MVC-express-API in NodeJS.",
+  "main": "src/index.ts",
+  "scripts": {
+    "prestart": "npm run clean && npm run build:prod",
+    "start": "node build/index.js",
+    "prestart:dev": "npm run clean && npm run build:dev",
+    "start:dev": "node build/index.js",
+    "build:prod": "webpack --config webpack.prod.config.js",
+    "build:dev": "webpack --config webpack.dev.config.js",
+    "clean": "rimraf build",
+    "build": "npm run prestart:dev"
+  },
+  "type": "module",
+  "keywords": [
+    "MVC",
+    "Webpack",
+    "TypeScript",
+    "TS",
+    "expressjs"
+  ],
+  "author": "Timo Woityschyn",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.12",
+    "@types/joi": "^17.2.3",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/node": "^15.14.0",
+    "@types/webpack-env": "^1.16.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.5",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "azure-ad-verify-token": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "socket.io": "^4.4.1"
+  }
+}

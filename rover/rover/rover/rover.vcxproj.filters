@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="adafruit-motor-hat\adafruitdcmotor.cpp" />
+    <ClCompile Include="adafruit-motor-hat\adafruitmotorhat.cpp" />
+    <ClCompile Include="adafruit-motor-hat\i2cdevice.cpp" />
+    <ClCompile Include="adafruit-motor-hat\pca9685.cpp" />
+    <ClCompile Include="log\Logger.cpp" />
+    <ClCompile Include="adafruit-motor-hat\util.cpp" />
+    <ClCompile Include="vehicle\chainvehicle.cpp" />
+    <ClCompile Include="RoverCommandReciever\RoverCommandReciever.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="adafruit-motor-hat\adafruitdcmotor.h" />
+    <ClInclude Include="adafruit-motor-hat\adafruitmotorhat.h" />
+    <ClInclude Include="adafruit-motor-hat\i2cdevice.h" />
+    <ClInclude Include="adafruit-motor-hat\pca9685.h" />
+    <ClInclude Include="adafruit-motor-hat\util.h" />
+    <ClInclude Include="log\Logger.h" />
+    <ClInclude Include="vehicle\chainvehicle.h" />
+    <ClInclude Include="RoverCommandReciever\RoverCommandReciever.h" />
+  </ItemGroup>
+</Project>

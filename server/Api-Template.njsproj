@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2e297b78-e2df-44e4-afe8-92c72b42e35d}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>
+    </StartupFile>
+    <WorkingDirectory>
+    </WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <NodejsPort>4321</NodejsPort>
+    <NodeExeArguments> --trace-deprecation --no-warnings</NodeExeArguments>
+    <Environment>
+    </Environment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <None Include="tsconfig.json" />
+    <Content Include="readme.md" />
+    <None Include="src\Controller.ts" />
+    <None Include="src\index.ts" />
+    <None Include="src\Mapper\Mapper.ts" />
+    <None Include="src\Controller\GET.ts" />
+    <None Include="src\Decorators\Authentication.ts" />
+    <None Include="src\Decorators\RouteDecorator.ts" />
+    <None Include="src\Serialiser\Application-JSON.strategy.ts" />
+    <None Include="src\Serialiser\Default.strategy.ts" />
+    <None Include="src\Serialiser\SerilisationFactory.ts" />
+    <None Include="src\ErrorHandling\HTTP\HttpError.ts" />
+    <None Include="src\ErrorHandling\HTTP\HTTPErrorCallback.ts" />
+    <None Include="src\ErrorHandling\HTTP\HTTPErrorHandler.ts" />
+    <None Include="src\ErrorHandling\HTTP\Errors\BadRequest.ts" />
+    <None Include="src\ErrorHandling\HTTP\Errors\Forbidden.ts" />
+    <None Include="src\ErrorHandling\HTTP\Errors\InternalServerError.ts" />
+    <None Include="src\ErrorHandling\HTTP\Errors\NotFound.ts" />
+    <None Include="src\ErrorHandling\HTTP\Errors\Unauthorised.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
+    <Folder Include="src\Controller\" />
+    <Folder Include="src\Decorators\" />
+    <Folder Include="src\ErrorHandling\" />
+    <Folder Include="src\ErrorHandling\HTTP\" />
+    <Folder Include="src\ErrorHandling\HTTP\Errors\" />
+    <Folder Include="src\ErrorHandling\SevereError\" />
+    <Folder Include="src\ErrorHandling\SevereError\Enviroment\" />
+    <Folder Include="src\Mapper\" />
+    <Folder Include="src\Logger\" />
+    <Folder Include="src\Authentication\" />
+    <Folder Include="src\Enviroment\" />
+    <Folder Include="src\static\" />
+    <Folder Include="src\Rover\" />
+    <Folder Include="src\WebSockets\" />
+    <Folder Include="src\Worker\" />
+    <Folder Include="src\Serialiser\" />
+    <Folder Include="src\Worker\Thread\" />
+    <Folder Include="src\Worker\Workers\" />
+    <Folder Include="src\Worker\Workers\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\Authentication\VerifyAzureBaererToken.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Decorators\BodyValidator.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Enviroment\EnviromentVariables.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Enviroment\ENVParamenterChecker.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ErrorHandling\SevereError\Enviroment\EnviromentError.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\ErrorHandling\SevereError\SevereError.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\FileLogger.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\Logger.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\LoggerLevel.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\SynchronousFileLogger.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\WorkerThreadLogger.ts" />
+    <TypeScriptCompile Include="src\Logger\MainThreadLogger.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\MainThreadRequestLogger.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Logger\WorkerThreadRequestLogger.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Rover\RoverPipe.ts" />
+    <TypeScriptCompile Include="src\WebSockets\GamePadEvent.ts" />
+    <TypeScriptCompile Include="src\WebSockets\SocketEvents.ts" />
+    <TypeScriptCompile Include="src\WebSockets\SocketInit.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Worker\ManagedWorker.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Worker\Thread\SetupWorkerLogging.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Worker\Thread\SetupWorkerThreadRequestLogging.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Worker\Workers\Test\Thread.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\Worker\Workers\Test\Worker.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

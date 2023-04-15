@@ -68,6 +68,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
+    <UseCompiler>true</UseCompiler>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -75,11 +76,41 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClCompile Include="adafruit-motor-hat\adafruitdcmotor.cpp" />
+    <ClCompile Include="adafruit-motor-hat\adafruitmotorhat.cpp" />
+    <ClCompile Include="adafruit-motor-hat\i2cdevice.cpp" />
+    <ClCompile Include="adafruit-motor-hat\pca9685.cpp" />
+    <ClCompile Include="adafruit-motor-hat\util.cpp" />
+    <ClCompile Include="RoverCommandReciever\RoverCommandReciever.cpp" />
+    <ClCompile Include="vehicle\chainvehicle.cpp" />
+    <ClCompile Include="log\Logger.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="adafruit-motor-hat\adafruitdcmotor.h" />
+    <ClInclude Include="adafruit-motor-hat\adafruitmotorhat.h" />
+    <ClInclude Include="adafruit-motor-hat\i2cdevice.h" />
+    <ClInclude Include="adafruit-motor-hat\pca9685.h" />
+    <ClInclude Include="adafruit-motor-hat\util.h" />
+    <ClInclude Include="RoverCommandReciever\RoverCommandReciever.h" />
+    <ClInclude Include="vehicle\chainvehicle.h" />
+    <ClInclude Include="log\Logger.h" />
   </ItemGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Link>
+      <SharedLibrarySearchPath>%(SharedLibrarySearchPath)</SharedLibrarySearchPath>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <AdditionalLibraryDirectories>%(Link.AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <LibraryDependencies>opencv_gapi;opencv_stitching;opencv_alphamat;opencv_aruco;opencv_bgsegm;opencv_bioinspired;opencv_ccalib;opencv_cudabgsegm;opencv_cudafeatures2d;opencv_cudaobjdetect;opencv_cudastereo;opencv_dnn_objdetect;opencv_dnn_superres;opencv_dpm;opencv_face;opencv_freetype;opencv_fuzzy;opencv_hdf;opencv_hfs;opencv_img_hash;opencv_intensity_transform;opencv_line_descriptor;opencv_mcc;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_saliency;opencv_sfm;opencv_stereo;opencv_structured_light;opencv_phase_unwrapping;opencv_superres;opencv_cudacodec;opencv_surface_matching;opencv_tracking;opencv_highgui;opencv_datasets;opencv_text;opencv_plot;opencv_videostab;opencv_cudaoptflow;opencv_optflow;opencv_cudalegacy;opencv_videoio;opencv_cudawarping;opencv_xfeatures2d;opencv_shape;opencv_ml;opencv_ximgproc;opencv_video;opencv_dnn;opencv_xobjdetect;opencv_objdetect;opencv_calib3d;opencv_imgcodecs;opencv_features2d;opencv_flann;opencv_xphoto;opencv_photo;opencv_cudaimgproc;opencv_cudafilters;opencv_imgproc;opencv_cudaarithm;opencv_core;opencv_cudev</LibraryDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>/usr/include/opencv4/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CLanguageStandard>gnu11</CLanguageStandard>
+      <CppLanguageStandard>gnu++1y</CppLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>
