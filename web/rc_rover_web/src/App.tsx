@@ -1,7 +1,7 @@
 import React from 'react';
 import rover from "./rover.svg";
 import './App.css';
-import { socket, socket_setup } from './Socketing';
+import { socket } from './Socketing';
 import { Joystick } from 'react-joystick-component';
 import { IJoystickUpdateEvent } from 'react-joystick-component/build/lib/Joystick';
 export interface AppProps {
@@ -34,10 +34,10 @@ export class App extends React.Component<AppProps, AppState> {
         <div className="App-header">
           <img src={rover} className="rover-logo" alt="rover" style={{ height: " 80%", width: "80%", objectFit: "contain" }} />
           <p>
-            {this.state.connection && "Is connected"}
+            {this.state.connection && "Connected"}
             {!this.state.connection && "Not connected"}
           </p>
-          <Joystick size={200} sticky={false} baseColor="#e7413e" stickColor="#1d1d1b" move={this.handleJoystick.bind(this)} stop={this.handleJoystick.bind(this)} />
+          <Joystick disabled={!this.state.connection} size={200} sticky={false} baseColor="#e7413e" stickColor="#1d1d1b" move={this.handleJoystick.bind(this)} stop={this.handleJoystick.bind(this)} />
         </div>
       </div>)
       ;
@@ -51,9 +51,9 @@ export class App extends React.Component<AppProps, AppState> {
   }
 
   public componentDidMount() {
-    socket_setup.ensureSetup().then(() => {
-      this.setState({ connection: true });
-    });
+    socket.on("connect", this.onSocketConnect.bind(this));
+    socket.on("disconnect", this.onSocketDisconnect.bind(this));
+
     this.mountInterval();
   }
 
@@ -106,6 +106,14 @@ export class App extends React.Component<AppProps, AppState> {
   public unmountInterval() {
     if (this.interval)
       clearInterval(this.interval);
+  }
+
+  public onSocketConnect() {
+    this.setState({ connection: true });
+  }
+
+  public onSocketDisconnect() {
+    this.setState({ connection: false });
   }
 
   public componentWillUnmount(): void {
